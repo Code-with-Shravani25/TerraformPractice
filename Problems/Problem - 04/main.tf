@@ -15,6 +15,7 @@ resource "aws_s3_bucket" "mybucket" {
   # acl = private # only makes the bucket private by default
   # whereas Block Public Access actively prevents any public ACLs or bucket policies from exposing the bucket. 
   # Therefore, Block Public Access is the AWS-recommended way to secure S3 buckets
+  # ACL = Access Control List
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
