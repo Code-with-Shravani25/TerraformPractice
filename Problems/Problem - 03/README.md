@@ -1,4 +1,5 @@
-# Method 1
+# Create S3 Bucket
+## Method 1
 ```bash
 provider "aws" {
   region = "us-east-1"
@@ -12,7 +13,7 @@ output "bucketname" {
   value = aws_s3_bucket.s3bucket.bucket
 }
 ```
-# Method 2
+## Method 2
 ```bash
 provider "aws" {
   region = "us-east-1"
