@@ -1,4 +1,6 @@
-# Method 1:
+# Create EC@ instance
+
+## Method 1:
 ```bash
 # Create a simple EC2 instance
 
@@ -17,7 +19,7 @@ output "public_ip" {
   value = aws_instance.demo_ec2.public_ip
 }
 ```
-# Method 2:
+## Method 2:
 main.tf
 ```bash
 provider "aws" {
