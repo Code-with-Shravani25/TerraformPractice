@@ -52,6 +52,13 @@ resource "aws_s3_bucket_lifecycle_configuration" "lifecycle" {
   ]
 }
 
+output "random_number" {
+  value = random_integer.bucket_suffix.id
+}
+output "bucketname" {
+  value = aws_s3_bucket.mybucket.bucket
+}
+
 # ACL private only sets the bucket ACL to private. 
 # However, someone can still make the bucket public using a bucket policy. 
 # Block Public Access is a stronger AWS security control that prevents public access through both ACLs and bucket policies, making it the recommended approach for securing S3 buckets.
