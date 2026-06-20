@@ -1,4 +1,4 @@
-# Create EC@ instance
+# Create EC2 instance
 
 ## Method 1:
 ```bash
