@@ -5,7 +5,7 @@ provider "aws"{
 
 resource "aws_instance" "myec2" {
   instance_type = var.instance_type
-  key_name = Demo
+  key_name = "Demo"
   ami = var.ami
   subnet_id = var.subnet
   vpc_security_group_ids = ["sg-0014e2d211f0a4462"]
