@@ -42,7 +42,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "lifecycle" {
     id     = "delete-old-versions"
     status = "Enabled"
 
-    noncurrent_version_expiration { # noncurrent means the not versions not the latest (not current version)
+    noncurrent_version_expiration { # noncurrent means not the current versions, not the latest versions 
       noncurrent_days = 30
     }
   }
