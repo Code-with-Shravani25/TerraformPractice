@@ -89,3 +89,9 @@ terraform apply -auto-approve
 ```bash
 terraform destroy -auto-approve
 ```
+
+## Passing variable
+
+```bash
+terraform aaply -var="key_name=mykey" -var="instance_type=t2.micro"
+```
