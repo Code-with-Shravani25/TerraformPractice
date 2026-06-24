@@ -9,3 +9,5 @@ provider "aws" {
     }
   }
 }
+
+# These default tags will get automatically applied to all AWS resources created using that AWS provider, even if you don't specify a tags block in the resource
