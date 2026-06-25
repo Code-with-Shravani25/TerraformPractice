@@ -19,7 +19,26 @@ output "public_ip" {
   value = aws_instance.demo_ec2.public_ip
 }
 ```
-## Method 2:
+## Method 2: using for_each
+main.tf
+```bash
+resource "aws_instance" "web" {
+  for_each = {
+    dev  = "t2.micro"
+    prod = "t3.medium"
+  }
+
+  ami           = "ami-091138d0f0d41ff90"
+  instance_type = each.value
+  key_name = "Demo"
+  vpc_security_group_ids = ["sg-0014e2d211f0a4462"]
+
+  tags = {
+    Name = each.key
+  }
+}
+```
+## Method 3:
 main.tf
 ```bash
 provider "aws" {
