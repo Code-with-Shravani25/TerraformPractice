@@ -95,3 +95,34 @@ terraform destroy -auto-approve
 ```bash
 terraform aaply -var="key_name=mykey" -var="instance_type=t2.micro"
 ```
+
+## terraform refresh
+
+- Used to update Terraform state with the actual infrastructure state.
+Example: Suppose someone manually changed an EC2 tag in AWS.
+Before refresh:
+```bash
+terraform show #shows old values
+```
+After terraform refresh: Terraform queries AWS and updates the local state file. terraform refresh is now depricated in newer terraform versions so use
+```bash
+terraform apply -refresh-only
+```
+
+## terraform show
+
+- Displays the current state in a human-readable format.
+```bash
+terraform show
+```
+
+## Inspect the State File and Extract the EC2 Instance ID
+
+View the state file
+```bash
+terraform state list
+```
+Display details of the EC2 resource
+```bash
+terraform state show aws_instance.myec2
+```
