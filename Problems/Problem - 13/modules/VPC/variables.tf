@@ -1,7 +1,15 @@
-output "vpc_id" {
-  value = aws_vpc.myvpc.id
+variable "vpc_cidr" {
+  type = string
 }
 
-output "public_subnet_id" {
-  value = aws_subnet.public.id
+variable "public_subnet_cidr" {
+  type = string
+}
+
+variable "private_subnet_cidr" {
+  type = string
+}
+
+variable "az" {
+  type = string
 }
